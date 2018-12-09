@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage[inline]{enumitem}
+\usepackage[left=2.54cm,top=3cm,right=2.54cm,bottom=3cm]{geometry}
+\usepackage[sorting=none, style=numeric-comp]{biblatex}
+\usepackage{hyperref}
+\usepackage{graphicx}
+% \usepackage{upgreek}
+% \usepackage{setspace}
+% \usepackage{longtable}
+\usepackage{tabularx}
+% \usepackage{framed}
+% \usepackage{eurosym}
+\usepackage{listings}
+% \usepackage{rotating}
+% \usepackage[table]{xcolor}
+\usepackage[acronym,toc,nogroupskip,nopostdot]{glossaries}
+\usepackage{glossary-mcols}
+\usepackage[justification=centering]{caption}
+\usepackage{pdfpages}
+
+% \graphicspath{ {00images/} }
+\DeclareGraphicsExtensions{.png,.pdf,.jpg}
+% \DeclareGraphicsExtensions{.pdf,.png} % - CHANGE TO THIS
+
+\addbibresource{mendeley.bib}
+\setlength{\parindent}{1cm}
+
+%\onehalfspacing
+% Acronyms %%%%%%%%
+\makeglossaries
+
+\newacronym{bmc}{BMC}{Business Model Canvas}
+\newacronym{ml}{ML}{Machine learning}
+\newacronym{sla}{SLA}{Service Level Agreement}
+%\newacronym{}{}{}
+%\newacronym{}{}{}
+%\newacronym{}{}{}
+
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+
+% \includepdf{frontpage}
+
+\tableofcontents
+% \pagebreak
+
+% \begin{singlespacing}
+% \setglossarystyle{mcolindex}
+% \printglossary[type=\acronymtype, title=List of acronyms and abbreviations, toctitle=List of acronyms and abbreviations, nonumberlist]
+% \printglossary
+% \end{singlespacing}
+
+\pagebreak
+
+\input{01intro/00introduction}
+\input{02problemForm/00problem}
+\input{03theories/00theories}
+\input{06conclusion}
+% 
+\includepdf[angle=90]{bmc.pdf}
+% 
+
+\printbibliography[heading=bibintoc]
+\pagebreak
+
+\end{document}
