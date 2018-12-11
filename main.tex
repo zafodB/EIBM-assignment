@@ -8,7 +8,7 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 % \usepackage{upgreek}
-% \usepackage{setspace}
+\usepackage{setspace}
 % \usepackage{longtable}
 \usepackage{tabularx}
 % \usepackage{framed}
@@ -20,6 +20,7 @@
 \usepackage{glossary-mcols}
 \usepackage[justification=centering]{caption}
 \usepackage{pdfpages}
+\usepackage{pdflscape}
 
 % \graphicspath{ {00images/} }
 \DeclareGraphicsExtensions{.png,.pdf,.jpg}
@@ -38,34 +39,51 @@
 \newacronym{ms}{MS}{Microsoft}
 \newacronym{hw}{HW}{hardware}
 \newacronym{sw}{SW}{software}
+\newacronym{ai}{AI}{Artificial intelligence}
+\newacronym{eibm}{EIBM}{Entrepreneurship, Innovation and Business models}
 %\newacronym{}{}{}
 %\newacronym{}{}{}
-
+%\newacronym{}{}{}
+%\newacronym{}{}{}
 \makeglossaries
 
 %%%%%%%%%%%%%%%%%%% 
 
 \begin{document}
 
-% \includepdf{frontpage}
+\includepdf{frontpage}
 
 \tableofcontents
 % \pagebreak
 
-% \begin{singlespacing}
-% \setglossarystyle{mcolindex}
-% \printglossary[type=\acronymtype, title=List of acronyms and abbreviations, toctitle=List of acronyms and abbreviations, nonumberlist]
-% \printglossary
-% \end{singlespacing}
+\begin{singlespacing}
+\setglossarystyle{mcolindex}
+\printglossary[type=\acronymtype, title=List of acronyms and abbreviations, toctitle=List of acronyms and abbreviations, nonumberlist]
+\printglossary
+\end{singlespacing}
+
+\vspace*{\fill}
+\small{Front page image: \copyright~Microsoft}
 
 \pagebreak
 
 \input{01intro/00introduction}
-\input{02problemForm/00problem}
+\input{02motivation/00motivation}
 \input{03theories/00theories}
 \input{06conclusion}
 % 
-\includepdf[angle=90]{bmc.pdf}
+\newgeometry{left=1.0cm, right = 0.3cm, top = 0.3cm, bottom=1.0cm}
+\begin{landscape}
+    \appendix
+    \section{Business Model Canvas}\label{apx:bmc}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=.9\pdfpageheight]{bmc}
+    \end{figure}
+
+\end{landscape}
+\restoregeometry
 % 
 
 \printbibliography[heading=bibintoc]
